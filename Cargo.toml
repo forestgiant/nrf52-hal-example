@@ -1,0 +1,15 @@
+[package]
+name = "nrf52-hal-example"
+version = "0.1.0"
+authors = ["Adam Richardson <ajrich01@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.5.8"
+panic-halt = "0.2.0"
+cortex-m-rt = "0.6.7"
+nrf52832-hal = "0.6.1"
+
+[dependencies.nrf52832-pac]
+features = ["rt"]
+version = "0.6.0"
