@@ -1,10 +1,17 @@
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
 
-pub use nrf52832_hal;
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+
 pub use nb;
+pub use nrf52832_hal;
 
 use crate::nrf52832_hal::gpio::{p0, Floating, Input};
 pub use crate::nrf52832_hal::nrf52832_pac;
+
+pub const blink: u32 = BLINKDEF;
 
 /// Maps the pins to the names printed on the device
 pub struct Pins {

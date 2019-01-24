@@ -8,6 +8,7 @@ use panic_halt;
 
 use nrf52_hal_example::nrf52832_hal::{gpio::Level, prelude::*, timer::Timer};
 
+use nrf52_hal_example::blink;
 use nrf52_hal_example::nrf52832_pac::Peripherals;
 use nrf52_hal_example::Pins;
 
@@ -29,28 +30,28 @@ fn main() -> ! {
         led3.set_high();
         led4.set_high();
 
-        delay(&mut timer, 250_000);
+        delay(&mut timer, blink);
 
         led1.set_high();
         led2.set_low();
         led3.set_high();
         led4.set_high();
 
-        delay(&mut timer, 250_000);
+        delay(&mut timer, blink);
 
         led1.set_high();
         led2.set_high();
         led3.set_low();
         led4.set_high();
 
-        delay(&mut timer, 250_000);
+        delay(&mut timer, blink);
 
         led1.set_high();
         led2.set_high();
         led3.set_high();
         led4.set_low();
 
-        delay(&mut timer, 250_000);
+        delay(&mut timer, blink);
     }
 }
 
