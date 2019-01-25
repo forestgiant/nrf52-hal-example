@@ -1,8 +1,10 @@
 #ifndef TIMECONST_H
 #define TIMECONST_H
 
-#define BLINKDEF 1000000
+#include <stdint.h>
 
-//const int blink = 250000;
+#define BLINKDEF 500000
+
+const int blink_ctype = 250000;
 
 #endif

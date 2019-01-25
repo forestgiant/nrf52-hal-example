@@ -73,3 +73,8 @@ impl Pins {
         }
     }
 }
+
+pub fn enable_softdevice() {
+    let mut x = 0;
+    x += 1;
+}
