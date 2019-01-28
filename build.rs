@@ -9,6 +9,7 @@ fn main() {
     println!("cargo:rustc-env=TARGET=thumbv7em-none-eabihf");
     let bindings = bindgen::Builder::default()
         .clang_arg("-I/usr/include")
+        .clang_arg("-I/usr/local/include/newlib/libc/include")
         .use_core()
         .ctypes_prefix("cty")
         .header("wrapper.h")
