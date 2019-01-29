@@ -18,38 +18,18 @@ fn main() -> ! {
     let pins = Pins::new(p.P0.split());
 
     let mut led1 = pins.led1.into_push_pull_output(Level::Low);
-    let mut led2 = pins.led2.into_push_pull_output(Level::Low);
-    let mut led3 = pins.led3.into_push_pull_output(Level::Low);
-    let mut led4 = pins.led4.into_push_pull_output(Level::Low);
+    //    let mut led2 = pins.led2.into_push_pull_output(Level::Low);
+    //    let mut led3 = pins.led3.into_push_pull_output(Level::Low);
+    //    let mut led4 = pins.led4.into_push_pull_output(Level::Low);
 
     let mut timer = p.TIMER0.constrain();
 
     loop {
         led1.set_low();
-        led2.set_high();
-        led3.set_high();
-        led4.set_high();
 
         delay(&mut timer, blink);
 
         led1.set_high();
-        led2.set_low();
-        led3.set_high();
-        led4.set_high();
-
-        delay(&mut timer, blink);
-
-        led1.set_high();
-        led2.set_high();
-        led3.set_low();
-        led4.set_high();
-
-        delay(&mut timer, blink);
-
-        led1.set_high();
-        led2.set_high();
-        led3.set_high();
-        led4.set_low();
 
         delay(&mut timer, blink);
     }
